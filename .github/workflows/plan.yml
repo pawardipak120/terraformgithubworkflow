@@ -5,10 +5,25 @@ on:
     branches:
     - main  
 jobs:
+  tflint:
+    name: 'TFlint'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: checkoutCode
+        uses: actions/checkout@v2
+      - name: tflint
+        uses: reviewdog/action-tflint@master
+        with:
+          github_token: ${{ secrets.github_token }}
+
   plan:
     name: 'TFplan'
     runs-on: ubuntu-latest
- 
+    needs: [tflint]
     defaults:
       run:
         shell: bash
@@ -30,7 +45,7 @@ jobs:
 
   apply:
     name: 'TFapply'
-    needs: [plan]
+    needs: [plan,tflint]
     runs-on: ubuntu-latest
     environment:
       name: dev
