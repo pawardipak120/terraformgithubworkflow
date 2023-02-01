@@ -46,6 +46,7 @@ jobs:
       id: init
       run: |
         pwd
+        ls -la
         terraform init
         terraform plan var-file="dev.tfvars"
 
