@@ -26,7 +26,7 @@ jobs:
     - name: terraform plan
       id: init
       run: |
-        terraform init
+        terraform help
 
   apply:
     name: 'TFapply'
@@ -47,5 +47,5 @@ jobs:
     - name: terraform Apply
       id: apply
       run: |
-        terraform init
+        terraform help
     
