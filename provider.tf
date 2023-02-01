@@ -25,3 +25,11 @@ resource "aws_s3_bucket" "bucket" {
   }
 }
 
+variable "aws_region" {
+  
+}
+
+variable "env" {
+  
+}
+
