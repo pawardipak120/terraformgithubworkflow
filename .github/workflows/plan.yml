@@ -32,6 +32,8 @@ jobs:
     name: 'TFapply'
     needs: [plan]
     runs-on: ubuntu-latest
+    environment:
+      name: dev
 
     defaults:
       run:
