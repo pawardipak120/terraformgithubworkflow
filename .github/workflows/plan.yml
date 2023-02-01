@@ -6,7 +6,7 @@ on:
     - main  
 jobs:
   plan:
-    name: 'plan'
+    name: 'TFplan'
     runs-on: ubuntu-latest
  
     defaults:
@@ -29,7 +29,7 @@ jobs:
         terraform init
 
   apply:
-    name: 'apply'
+    name: 'TFapply'
     needs: [plan]
     runs-on: ubuntu-latest
 
