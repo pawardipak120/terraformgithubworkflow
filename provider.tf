@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "sf-terraform-artifacts"
+    bucket = "terraform-artifacts-poc"
     key    = "gitworkflow/terraform.tfstate"
     region = "ap-southeast-2"
   }
